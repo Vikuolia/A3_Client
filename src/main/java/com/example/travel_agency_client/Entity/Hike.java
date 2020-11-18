@@ -22,12 +22,10 @@ public class Hike {
     private int  max_people;
     private double price;
 
-    private Instructor instructor;
-
-    List<Order> orders = new ArrayList<>();
+    private String instructorId;
 
     public Hike(String name, String date, int duration, int complexity, int min_age, int max_people,
-                double price, Instructor instructor){
+                double price, String instructorId){
         this.hikeId = UUID.randomUUID().toString();
         this.name = name;
         this.date = date;
@@ -36,21 +34,8 @@ public class Hike {
         this.min_age = min_age;
         this.max_people = max_people;
         this.price = price;
-        this.instructor = instructor;
+        this.instructorId = instructorId;
     }
 
-    public void changeInstructor(Instructor instructor){
-        this.instructor = instructor;
-    }
-
-    public double getPrice(){return this.price;}
-
-    public int getComplexity(){return this.complexity;}
-
-    public int getMin_age(){return this.min_age;}
-
-    public int getMax_people(){return  this.max_people;}
-
-    public String getName(){return this.name;}
 }
 

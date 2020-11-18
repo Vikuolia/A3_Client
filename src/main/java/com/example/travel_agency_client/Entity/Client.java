@@ -21,8 +21,6 @@ public class Client {
     private boolean student;
     private boolean frequentBuyer;
 
-    List<Order> orders = new ArrayList<>();
-
     public Client(String name, String surname, int age, int background, boolean student){
         this.clientId = UUID.randomUUID().toString();
         this.name = name;
@@ -33,15 +31,9 @@ public class Client {
         this.frequentBuyer = false;
     }
 
-    public int getAge(){return this.age;}
-
-    public int getBackground(){return this.background;}
-
-    public boolean isStudent(){return this.student;}
-
-    public boolean isFrequentBuyer(){return this.frequentBuyer;}
-
-    public void makeFrequentBuyer(){this.frequentBuyer = true;}
+    public String getId(){
+        return this.clientId;
+    }
 
     @Override
     public String toString(){

@@ -17,13 +17,15 @@ public class Worker {
     private String surname;
     private Position position;
 
-    List<Order> orders = new ArrayList<>();
-
     public Worker(String name, String surname, Position position){
         this.workerId = UUID.randomUUID().toString();
         this.surname = surname;
         this.name = name;
         this.position = position;
+    }
+
+    public String getId(){
+        return this.workerId;
     }
 }
 
