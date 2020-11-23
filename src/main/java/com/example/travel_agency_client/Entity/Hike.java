@@ -37,5 +37,9 @@ public class Hike {
         this.instructorId = instructorId;
     }
 
+    public String getId(){
+        return this.hikeId;
+    }
+
 }
 
