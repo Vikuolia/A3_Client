@@ -2,9 +2,7 @@ package com.example.travel_agency_client.Entity;
 
 import lombok.Data;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -33,8 +31,6 @@ public class Order {
     public void updateStatus(Status newStatus){
         this.status = newStatus;
     }
-
-
     public void setPrice(double newPrice){
         this.price = newPrice;
     }

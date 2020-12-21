@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.example.instructor;
+option java_multiple_files = true;
+
+message InstructorRequest{
+  string name = 1;
+  string surname = 2;
+  int32 background = 3;
+}
+
+message InstructorResponse{
+  string id = 1;
+  string name = 2;
+  string surname = 3;
+  int32 background = 4;
+}
+
+message AllInstructorsRequest{
+}
+
+message AllInstructorsResponse{
+  repeated InstructorResponse instructors = 1;
+}
+
+message InstructorByIdRequest{
+  string id = 1;
+}
+
+message DeleteInstructorResponse {
+  string response = 1;
+}
+
+service InstructorService{
+  rpc add(InstructorRequest) returns (InstructorResponse);
+  rpc all(AllInstructorsRequest) returns (AllInstructorsResponse);
+  rpc byId (InstructorByIdRequest) returns (InstructorResponse);
+  rpc delete (InstructorByIdRequest) returns (DeleteInstructorResponse);
+}

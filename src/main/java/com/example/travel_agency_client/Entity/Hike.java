@@ -1,12 +1,6 @@
 package com.example.travel_agency_client.Entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
-
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 @Data

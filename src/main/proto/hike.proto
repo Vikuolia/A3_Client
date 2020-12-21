@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package com.example.hike;
+option java_multiple_files = true;
+
+message HikeRequest{
+  string name = 1;
+  string date = 2;
+  int32 duration = 3;
+  int32 complexity = 4;
+  int32 min_age = 5;
+  int32 max_people = 6;
+  double price = 7;
+  string instructorId = 8;
+}
+
+message HikeResponse{
+  string hikeId = 1;
+  string name = 2;
+  string date = 3;
+  int32 duration = 4;
+  int32 complexity = 5;
+  int32 min_age = 6;
+  int32 max_people = 7;
+  double price = 8;
+  string instructorId = 9;
+}
+
+message AllHikesRequest{
+}
+
+message AllHikesResponse{
+  repeated HikeResponse hikes = 1;
+}
+
+message HikeByIdRequest{
+  string id = 1;
+}
+
+message DeleteHikeResponse {
+  string response = 1;
+}
+
+service HikeService{
+  rpc add(HikeRequest) returns (HikeResponse);
+  rpc all(AllHikesRequest) returns (AllHikesResponse);
+  rpc byId (HikeByIdRequest) returns (HikeResponse);
+  rpc delete (HikeByIdRequest) returns (DeleteHikeResponse);
+}

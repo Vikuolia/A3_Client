@@ -1,7 +1,6 @@
 package com.example.travel_agency_client.Entity;
 
 import lombok.Data;
-
 import java.util.UUID;
 
 @Data
